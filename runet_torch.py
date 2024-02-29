@@ -273,11 +273,11 @@ class runet(nn.Module):
 
         # Bottle neck stages
         bn_out_1 = self.bn1(enc_out_6)
-        bn_out_2 = self.bn1(bn_out_1)
-        bn_out_3 = self.bn1(bn_out_2)
-        bn_out_4 = self.bn1(bn_out_3)
-        bn_out_5 = self.bn1(bn_out_4)
-        bn_out_6 = self.bn1(bn_out_5)
+        bn_out_2 = self.bn2(bn_out_1)
+        bn_out_3 = self.bn3(bn_out_2)
+        bn_out_4 = self.bn4(bn_out_3)
+        bn_out_5 = self.bn5(bn_out_4)
+        bn_out_6 = self.bn6(bn_out_5)
 
         # Decoder stages
         merge6 = torch.cat((enc_out_6, bn_out_6), 1)
